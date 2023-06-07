@@ -12,7 +12,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            ViewBag.Message = "Hello";
+            ViewBag.Message = "Helslo";
             return View();
         }
         [HttpPost]
