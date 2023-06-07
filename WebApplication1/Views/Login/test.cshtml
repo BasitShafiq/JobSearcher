@@ -1,0 +1,74 @@
+﻿
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@model WebApplication1.Models.User
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: rgba(211, 211, 211, 0.5);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .card-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>@Model.email</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="/login/index" method="post">
+                            <div class="form-group">
+                                <label asp-for="Username">Username:</label>
+                                <input name="email" asp-for="Username" class="form-control" />
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password">Password:</label>
+                                <input name="password" asp-for="Password" class="form-control" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <input type="submit" class="btn btn-primary" value="LogIn" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
